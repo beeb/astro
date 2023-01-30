@@ -46,6 +46,16 @@ describe('SSG image with background - dev', function () {
 			id: '#rgb-spaced',
 			bg: 'rgb(105, 105, 105)',
 		},
+		{
+			title: 'RGBA',
+			id: '#rgba',
+			bg: 'rgba(105,105,105,0.5)',
+		},
+		{
+			title: 'RGBA color with spaces',
+			id: '#rgba-spaced',
+			bg: 'rgba(105, 105, 105, 0.5)',
+		},
 	].forEach(({ title, id, bg }) => {
 		it(title, async () => {
 			const image = $(id);
@@ -71,7 +81,7 @@ describe('SSG image with background - build', function () {
 	});
 
 	async function verifyImage(pathname, expectedBg) {
-		const url = new URL('./fixtures/background-color-image/dist/' + pathname, import.meta.url);
+		const url = new URL('./fixtures/background-color-image/dist' + pathname, import.meta.url);
 		const dist = fileURLToPath(url);
 		const data = await sharp(dist).raw().toBuffer();
 		// check that the first RGB pixel indeed has the requested background color
@@ -106,7 +116,6 @@ describe('SSG image with background - build', function () {
 			id: '#rgb-spaced',
 			bg: [105, 105, 105],
 		},
-
 		{
 			title: 'RGBA color',
 			id: '#rgba',

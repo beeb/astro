@@ -20,7 +20,7 @@ describe('SSR image with background', function () {
 			title: 'Named color',
 			id: '#named',
 			query: {
-				f: 'jpeg',
+				f: 'png',
 				w: '256',
 				h: '256',
 				href: /^\/_astro\/file-icon.\w{8}.png/,
@@ -42,7 +42,7 @@ describe('SSR image with background', function () {
 			title: 'Hex color short',
 			id: '#hex-short',
 			query: {
-				f: 'jpeg',
+				f: 'webp',
 				w: '256',
 				h: '256',
 				href: /^\/_astro\/file-icon.\w{8}.png/,
@@ -79,7 +79,7 @@ describe('SSR image with background', function () {
 				w: '256',
 				h: '256',
 				href: /^\/_astro\/file-icon.\w{8}.png/,
-				bg: 'rgb(105,105,105,0.5)',
+				bg: 'rgba(105,105,105,0.5)',
 			},
 		},
 		{
@@ -90,7 +90,7 @@ describe('SSR image with background', function () {
 				w: '256',
 				h: '256',
 				href: /^\/_astro\/file-icon.\w{8}.png/,
-				bg: 'rgb(105, 105, 105, 0.5)',
+				bg: 'rgba(105, 105, 105, 0.5)',
 			},
 		},
 	].forEach(({ title, id, query }) => {

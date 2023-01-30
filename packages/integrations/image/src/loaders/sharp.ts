@@ -23,12 +23,12 @@ class SharpService extends BaseSSRService {
 			});
 		}
 
+		if (transform.background) {
+			sharpImage.flatten({ background: transform.background });
+		}
+
 		if (transform.format) {
 			sharpImage.toFormat(transform.format, { quality: transform.quality });
-
-			if (transform.background && !isOutputFormatSupportsAlpha(transform.format)) {
-				sharpImage.flatten({ background: transform.background });
-			}
 		}
 
 		const { data, info } = await sharpImage.toBuffer({ resolveWithObject: true });
